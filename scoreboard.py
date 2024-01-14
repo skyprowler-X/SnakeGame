@@ -29,7 +29,7 @@ class Score(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
-            with open(r"score.txt", "w", encoding="UTF-8") as f:
+            with open("score.txt", "w", encoding="UTF-8") as f:
                 line = f"score: {self.score}"
                 f.write(line)
 
@@ -38,7 +38,7 @@ class Score(Turtle):
 
     def get_high_score(self):
         high_score = 0
-        with open(r"score.txt", "r", encoding="UTF-8") as f:
+        with open("score.txt", "r", encoding="UTF-8") as f:
             for line in f:
                 if "score" in line:
                     line = line.split(":")[1].strip()
